@@ -68,7 +68,8 @@ dd.directive('dropdownSelect', ['DropdownService',
       scope: {
         dropdownSelect: '=',
         dropdownModel: '=',
-        dropdownOnchange: '&'
+        dropdownOnchange: '&',
+        dropdownDisabled: '='
       },
 
       controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
@@ -86,8 +87,10 @@ dd.directive('dropdownSelect', ['DropdownService',
         };
 
         $element.bind('click', function (event) {
-          event.stopPropagation();
-          DropdownService.toggleActive($element);
+         event.stopPropagation();
+         if(!$scope.dropdownDisabled){
+            DropdownService.toggleActive($element);
+         }
         });
 
         $scope.$on('$destroy', function () {
@@ -131,7 +134,8 @@ dd.directive('dropdownMenu', ['$parse', '$compile', 'DropdownService', '$templat
       scope: {
         dropdownMenu: '=',
         dropdownModel: '=',
-        dropdownOnchange: '&'
+        dropdownOnchange: '&',
+        dropdownDisabled: '='
       },
 
       controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
@@ -161,7 +165,9 @@ dd.directive('dropdownMenu', ['$parse', '$compile', 'DropdownService', '$templat
 
         $element.bind('click', function (event) {
           event.stopPropagation();
-          DropdownService.toggleActive(tpl);
+          if(!$scope.dropdownDisabled){
+           DropdownService.toggleActive(tpl);
+          }
         });
 
         $scope.$on('$destroy', function () {
