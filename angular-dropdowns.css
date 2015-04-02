@@ -93,12 +93,6 @@
   border: none;
 }
 
-/* Hover state */
-
-.wrap-dd-select .dropdown li:hover a {
-  background: #f3f8f8;
-}
-
 .wrap-dd-select .dropdown:after {
   content: "";
   width: 0;
@@ -191,12 +185,6 @@
 .wrap-dd-menu .dropdown li:last-of-type a {
   border-radius: 0 0 7px 7px;
   border: none;
-}
-
-/* Hover state */
-
-.wrap-dd-menu .dropdown li:hover a {
-  background: #f3f8f8;
 }
 
 .wrap-dd-menu .dropdown:after {
