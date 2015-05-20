@@ -25,6 +25,7 @@ dd.run(['$templateCache', function ($templateCache) {
       '<a href="" class="dropdown-item"',
       ' ng-if="!dropdownSelectItem.divider"',
       ' ng-href="{{dropdownSelectItem.href}}"',
+      ' ng-class="{\'isLimited\': dropdownSelectItem.isLimited }"',
       ' ng-click="selectItem()">',
         '{{dropdownSelectItem[dropdownItemLabel]}}',
       '</a>',
